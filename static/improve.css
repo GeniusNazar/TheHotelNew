@@ -1,0 +1,419 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+}
+
+.logo h1 {
+    color: yellow;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow:
+        0 0 10px rgba(255, 255, 0, 0.8),
+        0 0 20px rgba(255, 255, 0, 0.6),
+        0 0 30px rgba(255, 255, 0, 0.4);
+    font-family: Arial, sans-serif;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    padding: 15px 10px;
+    color: yellow;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: monospace;
+    display: block;
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+    transition: all 0.3s ease; /* Плавний перехід для анімації */
+    border-radius: 5px; /* Округлені кути */
+}
+
+header nav ul li a:hover {
+    color: white;
+    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 0, 0.1); /* Легкий жовтий фон при наведенні */
+    transform: scale(1.05); /* Легке збільшення при наведенні */
+}
+
+/* Активне посилання (поточна сторінка) */
+header nav ul li a.active {
+    color: white;
+    background-color: rgba(255, 255, 0, 0.2);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+body {
+    margin-top: 80px;
+    background-color: black; /* Чорний фон для всієї сторінки */
+    color: yellow; /* Жовтий текст за замовчуванням */
+    font-family: Arial, sans-serif;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    body {
+        margin-top: 120px; /* Більший відступ для мобільної версії */
+    }
+}
+
+/* Додаткові стилі для контенту */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: yellow;
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Стилі для кнопок */
+.btn {
+    background-color: yellow;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.booking-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Анімований фон */
+.booking-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 0, 0.05) 0%, transparent 50%);
+    z-index: -1;
+    animation: backgroundShift 20s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+    0%, 100% {
+        background:
+            radial-gradient(circle at 20% 80%, rgba(255, 255, 0, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255, 255, 0, 0.05) 0%, transparent 50%);
+    }
+    50% {
+        background:
+            radial-gradient(circle at 80% 20%, rgba(255, 255, 0, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 20% 80%, rgba(255, 255, 0, 0.05) 0%, transparent 50%);
+    }
+}
+
+.booking-card {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 0, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(255, 255, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 0, 0.1);
+    animation: cardGlow 3s ease-in-out infinite alternate;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes cardGlow {
+    0% {
+        box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.5),
+            0 0 40px rgba(255, 255, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 0, 0.1);
+    }
+    100% {
+        box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.5),
+            0 0 60px rgba(255, 255, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 0, 0.2);
+    }
+}
+
+.booking-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 0, 0.02),
+        transparent
+    );
+    animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.booking-title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ffff00;
+    text-shadow:
+        0 0 10px rgba(255, 255, 0, 0.8),
+        0 0 20px rgba(255, 255, 0, 0.6),
+        0 0 30px rgba(255, 255, 0, 0.4);
+    animation: titlePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes titlePulse {
+    0% {
+        text-shadow:
+            0 0 10px rgba(255, 255, 0, 0.8),
+            0 0 20px rgba(255, 255, 0, 0.6),
+            0 0 30px rgba(255, 255, 0, 0.4);
+    }
+    100% {
+        text-shadow:
+            0 0 15px rgba(255, 255, 0, 1),
+            0 0 25px rgba(255, 255, 0, 0.8),
+            0 0 35px rgba(255, 255, 0, 0.6);
+    }
+}
+
+.booking-subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 0, 0.8);
+    font-style: italic;
+}
+
+.booking-form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.booking-form-group label {
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffff00;
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+}
+
+.booking-form-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid rgba(255, 255, 0, 0.3);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffff00;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.booking-form-group input:focus {
+    border-color: #ffff00;
+    box-shadow:
+        0 0 20px rgba(255, 255, 0, 0.3),
+        inset 0 0 10px rgba(255, 255, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.booking-form-group input::placeholder {
+    color: rgba(255, 255, 0, 0.5);
+}
+
+.booking-submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #ffff00 0%, #ffd700 100%);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 10px 30px rgba(255, 255, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-submit-btn:hover {
+    background: linear-gradient(135deg, #ffffff 0%, #ffff00 100%);
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 40px rgba(255, 255, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.booking-submit-btn:active {
+    transform: translateY(-1px);
+}
+
+.booking-submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.booking-submit-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Декоративні елементи */
+.decorative-dots {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    opacity: 0.3;
+}
+
+.decorative-dots::before,
+.decorative-dots::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ffff00;
+    border-radius: 50%;
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+.decorative-dots::before {
+    top: 0;
+    left: 0;
+}
+
+.decorative-dots::after {
+    bottom: 0;
+    right: 0;
+    animation-delay: 1s;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Адаптивність для бронювання */
+@media (max-width: 768px) {
+    .booking-card {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+
+    .booking-title {
+        font-size: 2em;
+    }
+
+    .booking-form-group input {
+        padding: 12px 15px;
+    }
+
+    .booking-submit-btn {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-title {
+        font-size: 1.8em;
+    }
+
+    .booking-card {
+        padding: 25px 15px;
+    }
+}

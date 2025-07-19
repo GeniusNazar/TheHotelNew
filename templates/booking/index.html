@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <h1>ВІТАЄМО В НАШОМУ ГОТЕЛІ!</h1>
+    {% else %}
+        <h1>СПОЧАТКУ ЗАРЕЄСТРУЙТЕСЬ БУДЬ ЛАСКА</h1>
+    {% endif %}
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'improve.css'%}">
+<header>
+    <div class="logo">
+        <h1>Ваш Готель</h1>
+    </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'login' %}">Вхід</a></li>
+                <li><a href="{% url 'register' %}">Реєстрація</a></li>
+                <li><a href="{% url 'rooms-list' %}">Кімнати</a></li>
+                <li><a href="{% url 'book-room' %}">Бронювання</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
